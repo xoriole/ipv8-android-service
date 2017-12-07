@@ -1,0 +1,6 @@
+_csv.so
+_lsprof.so
+_sqlite3.so
+sqlite3/*
+lib-dynload/_sqlite3.so
+unittest/*
