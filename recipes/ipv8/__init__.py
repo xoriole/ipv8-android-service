@@ -9,7 +9,7 @@ class LocalIPV8Recipe(PythonRecipe):
     Python-for-Android IPV8 recipe
     """
 
-    url = 'git+https://github.com/devos50/py-ipv8.git'
+    url = 'git+https://github.com/qstokkink/py-ipv8.git'
 
     #depends = ['apsw', 'cryptography', 'libsodium', 'm2crypto',
     #           'netifaces', 'openssl', 'pil', 'pycrypto', 'python2',
