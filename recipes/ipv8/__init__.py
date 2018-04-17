@@ -18,7 +18,8 @@ class LocalIPV8Recipe(PythonRecipe):
     #          ]
 
     depends = ['apsw', 'cryptography', 'libsodium', 'netifaces',
-               'python2', 'setuptools', 'twisted', 'networkx', 'lib2to3', 'libnacl'
+               'python2', 'setuptools', 'twisted', 'networkx', 'lib2to3', 'libnacl',
+               'gensafeprime'
               ]
 
     python_depends = ['sqlite3', 'decorator', 'libnacl', 'pyasn1', 'six']
