@@ -34,5 +34,9 @@ class LocalIPV8Recipe(PythonRecipe):
         # Install twistd plugins
         cp('-rf', join(self.get_build_dir(arch.arch), 'twisted'),
            join(self.ctx.get_python_install_dir(), 'lib/python2.7/site-packages'))
+        
+        # Copy ipv8_service.py
+        cp('-rf', join(self.get_build_dir(arch.arch), 'ipv8_service.py'),
+           join(self.ctx.get_python_install_dir(), 'lib/python2.7/site-packages'))
 
 recipe = LocalIPV8Recipe()
