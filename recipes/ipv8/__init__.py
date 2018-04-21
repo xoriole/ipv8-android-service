@@ -22,6 +22,8 @@ class LocalIPV8Recipe(PythonRecipe):
                'gensafeprime'
               ]
 
+    patches = ['no_tunnel_trustchain.patch']
+
     python_depends = ['sqlite3', 'decorator', 'libnacl', 'pyasn1', 'six']
 
     site_packages_name = 'ipv8'
