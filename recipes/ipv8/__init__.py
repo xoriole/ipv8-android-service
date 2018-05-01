@@ -22,7 +22,7 @@ class LocalIPV8Recipe(PythonRecipe):
                'gensafeprime'
               ]
 
-    patches = ['no_tunnel_trustchain.patch']
+    patches = ['no_tunnel_trustchain.patch', 'bootstrap_speed.patch']
 
     python_depends = ['sqlite3', 'decorator', 'libnacl', 'pyasn1', 'six']
 
