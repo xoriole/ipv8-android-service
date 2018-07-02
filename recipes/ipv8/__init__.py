@@ -18,8 +18,7 @@ class LocalIPV8Recipe(PythonRecipe):
     #          ]
 
     depends = ['apsw', 'cryptography', 'libsodium', 'netifaces',
-               'python2', 'setuptools', 'twisted', 'networkx', 'lib2to3', 'libnacl',
-               'gensafeprime'
+               'python2', 'setuptools', 'twisted', 'networkx', 'lib2to3', 'libnacl'
               ]
 
     patches = ['no_tunnel_trustchain.patch', 'bootstrap_speed.patch']

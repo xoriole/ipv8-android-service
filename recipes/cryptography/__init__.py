@@ -1,16 +1,17 @@
-#from pythonforandroid.toolchain import PythonRecipe
 from pythonforandroid.recipe import CompiledComponentsPythonRecipe
 from os.path import join
 
-class GenSafePrimeRecipe(CompiledComponentsPythonRecipe):
-    version = 'generate_prime_unix'
-    url = 'git+https://github.com/qstokkink/gensafeprime.git'
-    depends = ['hostpython2', 'setuptools', 'openssl']
-    site_packages_name = 'gensafeprime'
+
+class CryptographyRecipe(CompiledComponentsPythonRecipe):
+    name = 'cryptography'
+    version = 'master'
+    url = 'git+https://github.com/pyca/cryptography.git'
+    depends = [('python2', 'python3crystax'), 'openssl', 'idna', 'pyasn1', 'six', 'setuptools', 'enum34', 'ipaddress', 'cffi', 'asn1crypto']
+    site_packages_name = 'cryptography'
     call_hostpython_via_targetpython = False
 
     def get_recipe_env(self, arch):
-        env = super(GenSafePrimeRecipe, self).get_recipe_env(arch)
+        env = super(CryptographyRecipe, self).get_recipe_env(arch)
         r = self.get_recipe('openssl', self.ctx)
         openssl_dir = r.get_build_dir(arch.arch)
         env['PYTHON_ROOT'] = self.ctx.get_python_install_dir()
@@ -25,4 +26,5 @@ class GenSafePrimeRecipe(CompiledComponentsPythonRecipe):
                           ' -lcrypto' + r.version
         return env
 
-recipe = GenSafePrimeRecipe()
+
+recipe = CryptographyRecipe()
