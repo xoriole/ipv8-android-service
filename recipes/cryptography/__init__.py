@@ -6,6 +6,8 @@ class CryptographyRecipe(CompiledComponentsPythonRecipe):
     name = 'cryptography'
     version = 'master'
     url = 'git+https://github.com/pyca/cryptography.git'
+    #version = '2.3'
+    #url = 'https://files.pythonhosted.org/packages/79/a2/61c8625f96c8582d3053f89368c483ba62e56233d055e58e372f94a393f0/cryptography-{version}.tar.gz'
     depends = [('python2', 'python3crystax'), 'openssl', 'idna', 'pyasn1', 'six', 'setuptools', 'enum34', 'ipaddress', 'cffi', 'asn1crypto']
     site_packages_name = 'cryptography'
     call_hostpython_via_targetpython = False
