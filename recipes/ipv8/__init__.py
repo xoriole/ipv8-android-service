@@ -1,7 +1,8 @@
+from __future__ import absolute_import
+from pythonforandroid.toolchain import PythonRecipe, current_directory
 from os import getenv
 from os.path import join, exists
 from sh import mkdir, cp
-from pythonforandroid.toolchain import PythonRecipe, current_directory
 
 
 class LocalIPV8Recipe(PythonRecipe):

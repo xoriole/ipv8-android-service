@@ -8,8 +8,8 @@ p4a create \
 --force-build \
 --require-perfect-match \
 --release \
---sdk_dir=/opt/android-sdk \
---ndk_dir=/opt/android-ndk \
+--sdk_dir=/home/sandip/Android/Sdk \
+--ndk_dir=/home/sandip/Android/android-ndk-r13b \
 --ndk_version=13 \
 --android_api=18 \
 --arch=armeabi-v7a \
