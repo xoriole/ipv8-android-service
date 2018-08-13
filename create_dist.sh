@@ -8,8 +8,8 @@ p4a create \
 --force-build \
 --require-perfect-match \
 --release \
---sdk_dir=/opt/android-sdk \
---ndk_dir=/opt/android-ndk \
+--sdk_dir=/home/tribler/Android/Sdk \
+--ndk_dir=/home/tribler/Android/android-ndk-r13b \
 --ndk_version=13 \
 --android_api=18 \
 --arch=armeabi-v7a \
@@ -20,3 +20,4 @@ p4a create \
 --bootstrap=service_only \
 --requirements=ipv8 \
 --whitelist=.p4a-whitelist
+q
