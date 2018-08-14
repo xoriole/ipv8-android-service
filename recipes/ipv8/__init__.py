@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from os import getenv
 from os.path import join, exists
 from sh import mkdir, cp

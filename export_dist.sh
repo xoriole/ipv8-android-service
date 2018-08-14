@@ -8,8 +8,8 @@ mkdir -p dist
 
 p4a export_dist \
 --release \
---sdk_dir=/opt/android-sdk \
---ndk_dir=/opt/android-ndk \
+--sdk_dir=/home/tribler/Android/Sdk \
+--ndk_dir=/home/tribler/Android/android-ndk-r13b \
 --ndk_version=13 \
 --android_api=18 \
 --arch=armeabi-v7a \

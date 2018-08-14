@@ -23,10 +23,15 @@ class CryptographyRecipe(CompiledComponentsPythonRecipe):
         env['LDSHARED'] = env['CC'] + ' -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions'
         env['LDFLAGS'] += ' -L' + env['PYTHON_ROOT'] + '/lib' + \
                           ' -L' + openssl_dir + \
-                          ' -lpython2.7' + \
-                          ' -lssl' + r.version + \
-                          ' -lcrypto' + r.version
+                           ' -lssl' + r.version + \
+                           ' -lcrypto' + r.version
+        if self.ctx.ndk == 'crystax':
+            python_version = self.ctx.python_recipe.version[0:3]
+            ndk_dir_python = join(self.ctx.ndk_dir, 'sources/python/', python_version)
+            env['LDFLAGS'] += ' -L{}'.format(join(ndk_dir_python, 'libs', arch.arch))
+            env['LDFLAGS'] += ' -lpython{}m'.format(python_version)
+            env['CFLAGS'] += ' -I{}/include/python/'.format(ndk_dir_python)
+        else:
+            env['LDFLAGS'] += ' -lpython2.7'
         return env
-
-
 recipe = CryptographyRecipe()
