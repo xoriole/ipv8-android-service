@@ -2,10 +2,8 @@ from pythonforandroid.recipe import PythonRecipe
 
 
 class SetuptoolsRecipe(PythonRecipe):
-    version = '18.5'
-    #url = 'https://pypi.python.org/packages/source/s/setuptools/setuptools-{version}.tar.gz'
-    #url = 'https://github.com/pypa/setuptools/archive/v{version}.tar.gz'
-    url = 'https://files.pythonhosted.org/packages/ec/6d/b433a14c77ad17b917a9646d5ac96275309170a88fcffc967def7a1ba8ce/setuptools-{version}.tar.gz'
+    version = '40.0.0'
+    url = 'https://files.pythonhosted.org/packages/d3/3e/1d74cdcb393b68ab9ee18d78c11ae6df8447099f55fe86ee842f9c5b166c/setuptools-{version}.zip'
 
     depends = [('python2', 'python3crystax')]
     site_packages_name = 'setuptools'
