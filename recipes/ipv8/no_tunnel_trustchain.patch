@@ -1,14 +1,16 @@
 diff --git a/twisted/plugins/ipv8_plugin.py b/twisted/plugins/ipv8_plugin.py
-index 119a871..3a38e1c 100644
+index f567569..a1bf5ef 100644
 --- a/twisted/plugins/ipv8_plugin.py
 +++ b/twisted/plugins/ipv8_plugin.py
-@@ -43,7 +43,9 @@ class IPV8ServiceMaker(object):
+@@ -44,7 +44,11 @@ class IPV8ServiceMaker(object):
          """
          Main method to startup IPv8.
          """
 -        self.ipv8 = IPv8(get_default_configuration())
 +        config = get_default_configuration()
-+        config['overlays'] = [o for o in config['overlays'] if o['class'] not in ('HiddenTunnelCommunity', 'TrustChainCommunity')]
++        config['overlays'] = [o for o in config['overlays'] if
++                              o['class'] not in ('DHTDiscoveryCommunity', 'HiddenTunnelCommunity',
++                                                 'TrustChainCommunity')]
 +        self.ipv8 = IPv8(config)
  
          def signal_handler(sig, _):
