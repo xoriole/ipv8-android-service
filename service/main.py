@@ -23,7 +23,7 @@ class IPV8Service(object):
         options = Options()
         Options.parseOptions(options, os.getenv('PYTHON_SERVICE_ARGUMENT', '').split())
         service_maker.makeService(options)
-        print "WILL RUN SERVICE"
+        print("WILL RUN SERVICE")
         reactor.run()
 
 

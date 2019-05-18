@@ -2,7 +2,7 @@ from __future__ import absolute_import
 from os import getenv
 from os.path import join, exists
 from sh import mkdir, cp
-from pythonforandroid.toolchain import PythonRecipe, current_directory
+from pythonforandroid.recipe import PythonRecipe, current_directory
 
 
 class LocalIPV8Recipe(PythonRecipe):
@@ -12,13 +12,13 @@ class LocalIPV8Recipe(PythonRecipe):
 
     url = 'git+https://github.com/Tribler/py-ipv8.git'
 
-    depends = ['apsw', 'cryptography', 'libsodium', 'netifaces',
-               'python2', 'setuptools', 'twisted', 'lib2to3', 'libnacl'
+    depends = ['cryptography', 'libsodium', 'netifaces',
+               'python3', 'setuptools', 'twisted', 'lib2to3', 'libnacl', 'sqlite3', 'decorator', 'libnacl', 'six'
               ]
 
-    patches = ['no_tunnel_trustchain.patch']
+    patches = []
 
-    python_depends = ['sqlite3', 'decorator', 'libnacl', 'pyasn1', 'six']
+    python_depends = ['hyperlink']
 
     site_packages_name = 'ipv8'
 
@@ -28,11 +28,9 @@ class LocalIPV8Recipe(PythonRecipe):
         super(LocalIPV8Recipe, self).postbuild_arch(arch)
 
         # Install twistd plugins
-        cp('-rf', join(self.get_build_dir(arch.arch), 'twisted'),
-           join(self.ctx.get_python_install_dir(), 'lib/python2.7/site-packages'))
+        cp('-rf', join(self.get_build_dir(arch.arch), 'twisted', 'plugins'), join(self.ctx.get_python_install_dir(), 'twisted'))
         
         # Copy ipv8_service.py
-        cp('-rf', join(self.get_build_dir(arch.arch), 'ipv8_service.py'),
-           join(self.ctx.get_python_install_dir(), 'lib/python2.7/site-packages'))
+        cp('-rf', join(self.get_build_dir(arch.arch), 'ipv8_service.py'), self.ctx.get_python_install_dir())
 
 recipe = LocalIPV8Recipe()
