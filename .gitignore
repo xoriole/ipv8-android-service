@@ -1,2 +1,4 @@
 dist/
 typescript
+**.pyc
+**.DS_Store
