@@ -16,7 +16,7 @@ class LocalIPV8Recipe(PythonRecipe):
                'python3', 'setuptools', 'twisted', 'lib2to3', 'libnacl', 'sqlite3', 'decorator', 'libnacl', 'six'
               ]
 
-    patches = []
+    patches = ["no_bootstrap.patch"]
 
     python_depends = ['hyperlink']
 
