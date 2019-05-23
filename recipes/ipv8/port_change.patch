@@ -1,0 +1,13 @@
+diff --git a/ipv8/configuration.py b/ipv8/configuration.py
+index ff7a123..bd96ede 100644
+--- a/ipv8/configuration.py
++++ b/ipv8/configuration.py
+@@ -4,7 +4,7 @@ import copy
+ 
+ default = {
+     'address': '0.0.0.0',
+-    'port': 8090,
++    'port': 8091,
+     'keys': [
+         {
+             'alias': "anonymous id",
