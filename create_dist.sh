@@ -6,6 +6,7 @@ echo Create dist
 
 p4a create \
 --force-build \
+--arch=armeabi-v7a, x86, x86_64, arm64-v8a \
 --require-perfect-match \
 --release \
 --sdk_dir=$ANDROID_SDK_HOME \
